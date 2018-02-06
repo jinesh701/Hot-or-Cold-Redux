@@ -20,7 +20,7 @@ export default (state = initialState, action) => {
   if (action.type === MAKE_GUESS) {
     let feedback, guess;
 
-    guess = parseInt(guess, 10);
+    guess = parseInt(action.guess, 10);
     if (isNaN(guess)) {
       feedback = "Please enter a valid number";
 
@@ -30,7 +30,7 @@ export default (state = initialState, action) => {
       });
     }
 
-    const difference = Math.abs(guess - this.state.correctAnswer);
+    const difference = Math.abs(guess - state.correctAnswer);
 
     if (difference >= 50) {
       feedback = "You're Ice Cold...";
