@@ -32,7 +32,6 @@ export default (state = initialState, action) => {
 
     const difference = Math.abs(guess - this.state.correctAnswer);
 
-    let feedback;
     if (difference >= 50) {
       feedback = "You're Ice Cold...";
     } else if (difference >= 30) {
